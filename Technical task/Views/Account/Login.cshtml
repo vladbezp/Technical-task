@@ -1,12 +1,18 @@
 ﻿@model Technical_task.Models.LoginModel
 
-<h1>Login</h1>
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <form asp-action="Login">
+        <div class="mb-3">
+            @Html.HiddenFor(x=>x.ReturnUrl)
 
-<form asp-action="Login">
-    @Html.HiddenFor(x=>x.ReturnUrl)
-
-    <input class="form-control" type="text" name="username" placeholder="Username" />
-    <input type="password" class="form-control" name="password" placeholder="Password" />
-    <br />
-    <button class="btn btn-sucess">Sing in</button>
-</form>
+            <div class="mb-3">
+                <input class="form-control" type="text" name="username" placeholder="Username" />
+            </div>
+            <div class="mb-3">
+                <input type="password" class="form-control" name="password" placeholder="Password" />
+            </div>
+            <br />
+            <button class="btn btn-sucess">Sing in</button>
+        </div>
+    </form>
+</div>
