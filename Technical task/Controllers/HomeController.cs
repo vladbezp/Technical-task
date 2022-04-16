@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using Technical_task.Models;
 
@@ -18,15 +19,22 @@ namespace Technical_task.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        [Authorize(Roles = "backend")]
+        public IActionResult Backend()
+        {
+            return View();
+        }
+
+        [Authorize(Roles = "frontend")]
+        public IActionResult Frontend()
+        {
+            return View();
         }
     }
 }
