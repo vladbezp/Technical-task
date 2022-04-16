@@ -22,18 +22,6 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        @if (User.IsInRole("backend"))
-                        {
-                             <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Backend">Backend</a>
-                            </li>
-                        }
-                        @if (User.IsInRole("frontend"))
-                        {
-                            <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Frontend">Frontend</a>
-                            </li>
-                        }
                         @if (User.Identity.IsAuthenticated)
                         {
                             <li class="nav-item">

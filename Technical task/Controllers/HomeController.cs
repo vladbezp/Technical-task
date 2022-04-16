@@ -24,17 +24,5 @@ namespace Technical_task.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-
-        [Authorize(Roles = "backend")]
-        public IActionResult Backend()
-        {
-            return View();
-        }
-
-        [Authorize(Roles = "frontend")]
-        public IActionResult Frontend()
-        {
-            return View();
-        }
     }
 }
