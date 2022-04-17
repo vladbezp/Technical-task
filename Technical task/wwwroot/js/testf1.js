@@ -10,6 +10,7 @@
             "Hyper Tool Multi Language"
         ]
     },
+
     {
         numb: 2,
         question: "What does CSS stand for?",
@@ -21,49 +22,28 @@
             "Cascading Style Sheet"
         ]
     },
+
     {
         numb: 3,
-        question: "What does PHP stand for?",
-        answer: "Hypertext Preprocessor",
+        question: "What keyword is used to create a JavaScript variable?",
+        answer: "var",
         options: [
-            "Hypertext Preprocessor",
-            "Hypertext Programming",
-            "Hypertext Preprogramming",
-            "Hometext Preprocessor"
-        ]
-    },
-    {
-        numb: 4,
-        question: "What does SQL stand for?",
-        answer: "Structured Query Language",
-        options: [
-            "Stylish Question Language",
-            "Stylesheet Query Language",
-            "Statement Question Language",
-            "Structured Query Language"
-        ]
-    },
-    {
-        numb: 5,
-        question: "What does XML stand for?",
-        answer: "eXtensible Markup Language",
-        options: [
-            "eXtensible Markup Language",
-            "eXecutable Multiple Language",
-            "eXTra Multi-Program Language",
-            "eXamine Multiple Language"
+            "variable",
+            "varies",
+            "string",
+            "var"
         ]
     },
 
     {
-        numb: 6,
-        question: "What does XML stand for?",
-        answer: "eXtensible Markup Language",
+        numb: 4,
+        question: "Which snippet of CSS is commonly used to center a website horizontally?",
+        answer: "margin: 0 auto;",
         options: [
-            "eXtensible Markup Language",
-            "eXecutable Multiple Language",
-            "eXTra Multi-Program Language",
-            "eXamine Multiple Language"
+            "site-align: center;",
+            "margin: center;",
+            "margin: auto 0;",
+            "margin: 0 auto;"
         ]
     },
 ];

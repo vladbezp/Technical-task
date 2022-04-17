@@ -29,6 +29,7 @@ continue_btn.onclick = () => {
         startTimerLine(0); //calling startTimerLine function
     }
 }
+
 let timeValue = 15;
 let que_count = 0;
 let que_numb = 1;
@@ -38,6 +39,7 @@ let counterLine;
 let widthValue = 0;
 const restart_quiz = result_box.querySelector(".buttons .restart");
 const quit_quiz = result_box.querySelector(".buttons .quit");
+
 // if restartQuiz button clicked
 restart_quiz.onclick = () => {
     quiz_box.classList.add("activeQuiz"); //show quiz box

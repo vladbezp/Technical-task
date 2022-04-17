@@ -28,6 +28,7 @@ namespace Technical_task.Controllers
                 Role = "frontend"
             });
         }
+
         public IActionResult Login(string returnUrl="/")
         {
             LoginModel loginModel = new LoginModel();

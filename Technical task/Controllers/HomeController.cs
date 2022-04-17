@@ -5,6 +5,7 @@ using Technical_task.Models;
 
 namespace Technical_task.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -15,6 +16,16 @@ namespace Technical_task.Controllers
         }
 
         public IActionResult Index()
+        {
+            return View();
+        }
+
+        public IActionResult Test()
+        {
+            return View();
+        }
+
+        public IActionResult STest()
         {
             return View();
         }

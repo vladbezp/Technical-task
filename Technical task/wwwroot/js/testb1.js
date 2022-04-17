@@ -21,4 +21,27 @@
             "All of the above"
         ]
     },
+
+    {
+        numb: 3,
+        question: "What is the threading model used for ASP.NET?",
+        answer: "MTA theading model",
+        options: [
+            "STA threading model",
+            "MTA theading model",
+            "None"
+        ]
+    },
+
+    {
+        numb: 4,
+        question: "What is the fastest way to concat strings in ASP.NET?",
+        answer: "Code using Append method of the StringBuilder object",
+        options: [
+            "Code using Substring method of the string object",
+            "Code using Append method of the StringBuilder object",
+            "Code using Concat method of the String object",
+            "Code using plus sign operator to concatenate the strings"
+        ]
+    },
 ];
