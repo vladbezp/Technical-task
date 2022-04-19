@@ -2,7 +2,7 @@
 
 namespace Technical_task.Models
 {
-    public class UserModel
+    public class User
     {
         [Key]
         public int Id { get; set; }

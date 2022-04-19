@@ -2,32 +2,20 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
+using Technical_task.Data;
 using Technical_task.Models;
 
 namespace Technical_task.Controllers
 {
     public class AccountController : Controller
     {
-        public List<UserModel> users = null;
+        private readonly ApplicationDbContext _context;
 
-        public AccountController()
+        public AccountController(ApplicationDbContext context)
         {
-            users = new List<UserModel>();
-            users.Add(new UserModel()
-            {
-                Id = 1,
-                UserName = "backend",
-                Password = "backend",
-                Role = "backend"
-            });
-            users.Add(new UserModel()
-            {
-                Id = 2,
-                UserName = "frontend",
-                Password = "frontend",
-                Role = "frontend"
-            });
+            _context = context;
         }
+
 
         public IActionResult Login(string returnUrl="/")
         {
@@ -39,7 +27,7 @@ namespace Technical_task.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginModel loginModel)
         {
-            var user = users.Where(u => u.UserName == loginModel.UserName && u.Password == loginModel.Password).FirstOrDefault();
+            var user = _context.Users.Where(u => u.UserName == loginModel.UserName && u.Password == loginModel.Password).FirstOrDefault();
             if(user != null)
             {
                 var claims = new List<Claim>()
