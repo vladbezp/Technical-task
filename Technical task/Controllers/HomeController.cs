@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using Technical_task.Data;
@@ -20,18 +21,19 @@ namespace Technical_task.Controllers
 
         public IActionResult Index()
         {
-            IEnumerable<Test> tests = _context.Tests.ToList();
+            string userRole = User.IsInRole("frontend") ? "frontend" : "backend";
+            IEnumerable<Test> tests = _context.Tests.ToList()
+                .Where(t => t.Type == userRole);
+
             return View(tests);
         }
 
-        public IActionResult Test()
+        public IActionResult Test(int id)
         {
-            return View();
-        }
-
-        public IActionResult STest()
-        {
-            return View();
+            IEnumerable<Test> test = _context.Tests.ToList()
+                .Where(i => i.Id == id);
+            Console.WriteLine("asd");
+            return View(test);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
