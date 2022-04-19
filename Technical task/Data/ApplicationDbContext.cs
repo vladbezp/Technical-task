@@ -11,5 +11,7 @@ namespace Technical_task.Data
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<QA> QA { get; set; }
+        public DbSet<Test> Tests { get; set; }
     }
 }
