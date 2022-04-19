@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Technical_task.Models.QA>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/test.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+
+    <div class="quiz_box">
+        <header>
+            <div class="timer">
+                <div class="time_left_txt">Time Left</div>
+                <div class="timer_sec">15</div>
+            </div>
+            <div class="time_line"></div>
+        </header>
+        <section>
+            <div class="que_text">
+                
+            </div>
+            <div class="option_list">
+            </div>
+        </section>
+        <footer>
+            <div class="total_que">
+            </div>
+            <button class="next_btn">Next</button>
+        </footer>
+    </div>
+    <div class="result_box">
+        <div class="complete_text">Result</div>
+        <div class="score_text">
+        </div>
+        <div class="buttons">
+            <button class="restart">Restart</button>
+            <button class="quit">Back</button>
+        </div>
+    </div>
+
+<script type="text/javascript">
+    const data = JSON.parse(`@Json.Serialize(Model)`);
+    var questions = data.map(el => ({
+        numb: el.id,
+        question: el.question,
+        answer: el.correct,
+        options: [
+            el.answer,
+            el.answer2,
+            el.answer3
+        ]
+    }))
+</script>
+<script src="~/js/script.js" asp-append-version="true"></script> 
+
+</body>
+</html>
+

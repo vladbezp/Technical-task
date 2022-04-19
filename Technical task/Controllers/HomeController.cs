@@ -25,6 +25,7 @@ namespace Technical_task.Controllers
             IEnumerable<Test> tests = _context.Tests.ToList()
                 .Where(t => t.Type == userRole);
 
+
             return View(tests);
         }
 
@@ -32,8 +33,16 @@ namespace Technical_task.Controllers
         {
             IEnumerable<Test> test = _context.Tests.ToList()
                 .Where(i => i.Id == id);
-            Console.WriteLine("asd");
+
             return View(test);
+        }
+
+        public IActionResult QA(int id)
+        {
+            IEnumerable<QA> qa = _context.QA.ToList()
+                .Where(i => i.parentId == id);
+
+            return View(qa);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
